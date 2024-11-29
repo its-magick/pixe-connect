@@ -44,26 +44,18 @@ if ! command -v tar >/dev/null 2>&1; then
 fi
 
 if ! command -v npm >/dev/null 2>&1; then
-    echo "npm is required but it's not installed. Installing npm from source..."
+    echo "npm is required but it's not installed. Installing Node.js from source..."
     apt-get install -y build-essential
     cd /tmp
-    curl -LO https://nodejs.org/dist/v$VER/node-v$VER.tar.gz
-    tar -xzf node-v$VER.tar.gz
-    cd node-v$VER
+    curl -LO https://nodejs.org/dist/v20.9.0/node-v20.9.0.tar.gz
+    tar -xzf node-v20.9.0.tar.gz
+    cd node-v20.9.0
     ./configure
     make
     make install
     cd ..
-    rm -rf node-v$VER node-v$VER.tar.gz
+    rm -rf node-v20.9.0 node-v20.9.0.tar.gz
 fi
-
-
-
-export VER=20.9.0
-
-curl https://nodejs.org/dist/v$VER/node-v$VER-linux-x64.tar.xz | tar --file=- --extract --xz --directory /usr/local/ --strip-components=1
-
-export PATH=/usr/local/bin:$PATH
 
 # Install dependencies
 npm install
