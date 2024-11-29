@@ -1,19 +1,19 @@
 #!/bin/sh
 
 # Check for prerequisites and install if not available
-if ! command -v make >/dev/null 2>&1; then
-    echo "make is required but it's not installed. Installing make from source..."
-    apt-get install -y build-essential
-    cd /tmp
-    curl -LO https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
-    tar -xzf make-4.3.tar.gz
-    cd make-4.3
-    ./configure
-    make
-    make install
-    cd ..
-    rm -rf make-4.3 make-4.3.tar.gz
-fi
+# if ! command -v make >/dev/null 2>&1; then
+#     echo "make is required but it's not installed. Installing make from source..."
+#     apt-get install -y build-essential
+#     cd /tmp
+#     curl -LO https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
+#     tar -xzf make-4.3.tar.gz
+#     cd make-4.3
+#     ./configure
+#     make
+#     make install
+#     cd ..
+#     rm -rf make-4.3 make-4.3.tar.gz
+# fi
 
 if ! command -v curl >/dev/null 2>&1; then
     echo "curl is required but it's not installed. Installing curl from source..."
