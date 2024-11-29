@@ -1,5 +1,5 @@
 #!/bin/sh
-mv . ../app/
+mv . /app
 # Install nvm if not already installed
 if ! command -v nvm >/dev/null 2>&1; then
     echo "nvm is required but it's not installed. Installing nvm..."
