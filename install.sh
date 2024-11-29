@@ -3,12 +3,12 @@
 # Check for prerequisites and install if not available
 if ! command -v curl >/dev/null 2>&1; then
     echo "curl is required but it's not installed. Installing curl..."
-    sudo apt-get update && sudo apt-get install -y curl
+    apt-get update && apt-get install -y curl
 fi
 
 if ! command -v tar >/dev/null 2>&1; then
     echo "tar is required but it's not installed. Installing tar..."
-    sudo apt-get update && sudo apt-get install -y tar
+    apt-get update && apt-get install -y tar
 fi
 
 export VER=20.9.0
