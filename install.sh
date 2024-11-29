@@ -14,7 +14,7 @@ nvm install $VER
 nvm use $VER
 
 # Install dependencies
-npm install /package.json
+npm install ./
 
 # Start the application as a background job
-node /index.js &
+node ./index.js &
