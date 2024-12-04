@@ -15,6 +15,7 @@ nvm use $VER
 
 # Install dependencies
 npm install /app/pixe-connect/
-
+npm install -g pm2
+pm2 link d6etho8ptvtmp0n t13b6visz6ph6z5
 # Start the application as a background job
-node /app/pixe-connect/index.js &
+pm2 start /app/pixe-connect/index.js
