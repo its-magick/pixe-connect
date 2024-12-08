@@ -191,7 +191,7 @@ async function connectToQueue() {
 async function upscaleImage(imageUrl) {
   const upscaleParams = {
     method: 'POST',
-    url: 'https://flows.mpvt.io/webhook-test/image/upscale',
+    url: 'https://flows.mpvt.io/webhook/image/upscale',
     headers: {
       'Content-Type': 'application/json'
     },
