@@ -10,12 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gradio/client": "^1.8.0",
     "ably": "^2.5.0",
     "amqp": "^0.2.7",
     "amqplib": "^0.10.4",
     "axios": "^1.7.7",
     "figlet": "^1.8.0",
-    "gradio": "^0.1.0"
   }
 }
