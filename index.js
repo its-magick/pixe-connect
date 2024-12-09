@@ -82,7 +82,7 @@ async function connectToQueue() {
         let config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: 'http://localhost:7860/gradio_api/call/generate_image',
+          url: ' https://239cca778c7cfc03bc.gradio.live/gradio_api/call/generate_image',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -98,7 +98,7 @@ async function connectToQueue() {
 
           try {
             console.log('Sending image meta request...');
-            const secondResponse = await axios.get("http://localhost:7860/gradio_api/call/generate_image/" + result.event_id.trim());
+            const secondResponse = await axios.get(" https://239cca778c7cfc03bc.gradio.live/gradio_api/call/generate_image/" + result.event_id.trim());
             console.log('Second generate image request successful');
 
             try {
@@ -130,7 +130,7 @@ async function connectToQueue() {
                 console.log('Uploading image to Cloudflare bucket...');
                 const uploadResponse = await axios(uploadParams);
                 console.log('Cloudflare upload successful -', uploadResponse.status);
-                const imageUrl = uploadResponse.data;
+                const imageUrl = uploadResponse.data.replace("https://i.magick.ai", "https://pub-a1b9dfcaefea4901bd22005e6034de7d.r2.dev");
                 console.log('Image URL:', imageUrl);
 
                 const upscaledImageUrl = await upscaleImage(imageUrl);
@@ -199,8 +199,8 @@ async function upscaleImage(imageUrl) {
   };
   console.log('Upscaling image...');
   const upscaleResponse = await axios(upscaleParams);
-  console.log('Image upscaled successfully -', upscaleResponse.data);
-  return upscaleResponse.data.url;
+  console.log('Image upscaled successfully -', upscaleResponse.data.response);
+  return upscaleResponse.data.response;
 }
 
 async function closeConnection() {
