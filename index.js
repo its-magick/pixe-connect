@@ -82,7 +82,7 @@ async function connectToQueue() {
         let config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: ' https://localhost:7860/gradio_api/call/generate_image',
+          url: ' http://localhost:7860/gradio_api/call/generate_image',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -98,7 +98,7 @@ async function connectToQueue() {
 
           try {
             console.log('Sending image meta request...');
-            const secondResponse = await axios.get(" https://localhost:7860/gradio_api/call/generate_image/" + result.event_id.trim());
+            const secondResponse = await axios.get(" http://localhost:7860/gradio_api/call/generate_image/" + result.event_id.trim());
             console.log('Second generate image request successful');
 
             try {
