@@ -1,5 +1,5 @@
 #!/bin/sh
-mv . /app
+
 # Install nvm if not already installed
 if ! command -v nvm >/dev/null 2>&1; then
     echo "nvm is required but it's not installed. Installing nvm..."
@@ -14,8 +14,8 @@ nvm install $VER
 nvm use $VER
 
 # Install dependencies
-npm install /app/pixe-connect/
+npm install
 npm install -g pm2
 pm2 link d6etho8ptvtmp0n t13b6visz6ph6z5
 # Start the application as a background job
-pm2 start /app/pixe-connect/index.js -i 4
+pm2 start index.js -i 4
