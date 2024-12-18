@@ -72,8 +72,7 @@ async function connectToQueue() {
             image_request.width || 1920,
             image_request.height || 1080,
             true,
-            4,
-            api_name="/RealtimeFlux"
+            4
           ]
         });
 
