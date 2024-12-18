@@ -130,12 +130,12 @@ async function connectToQueue() {
                 const imageUrl = uploadResponse.data.replace("https://i.magick.ai", "https://pub-a1b9dfcaefea4901bd22005e6034de7d.r2.dev");
                 console.log('Image URL:', imageUrl);
 
-                const upscaledImageUrl = await upscaleImage(imageUrl);
+                //const upscaledImageUrl = await upscaleImage(imageUrl);
 
                 if (image_request.sessionId === 'API') {
                   console.log('Posting message back to callback URL...');
                   try {
-                    await axios.post(image_request.callback, { imageUrl: upscaledImageUrl });
+                    await axios.post(image_request.callback, { imageUrl: imageUrl });
                     console.log('Callback POST request successful');
                   } catch (callbackError) {
                     console.error('Error posting to callback URL:', callbackError);
