@@ -68,7 +68,7 @@ async function connectToQueue() {
         let data = JSON.stringify({
           "data": [
             image_request.prompt,
-            -1
+            -1,
             image_request.width || 1920,
             image_request.height || 1080,
             true,
