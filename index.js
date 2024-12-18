@@ -145,7 +145,7 @@ async function connectToQueue() {
                   // Send Ably message
                   const channel = ably.channels.get(image_request.sessionId);
                   console.log('Sending Ably message to user session...');
-                  await channel.publish("imageGenerated", { text: `<img src="${upscaledImageUrl}" width=500 />` }, (err) => {
+                  await channel.publish("imageGenerated", { text: `<img src="${imageUrl}" width=500 />` }, (err) => {
                     if (err) {
                       console.error('Error sending Ably message:', err);
                       is_error = true;
